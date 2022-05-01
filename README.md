@@ -1,4 +1,6 @@
-# Java Reachability Playground
+# Java Reachability Playground Modified by ASecurityGuru
+
+# Updated on 5th May, 2022 - Added GitHub Workflow file
 
 This is an intentionally vulnerable application. It was purposely designed to demonstrate the capabilities of Snyk's Reachable
 Vulnerabilities feature and includes both a "Reachable" vulnerability (with a direct data flow to the vulnerable function) and a "Potentially Reachable" vulnerability (where only partial data exists for determining reachability).
@@ -31,11 +33,3 @@ and the function call path to the vulnerability
 
 *Note: Once the java application is run, `malicious_file.zip` will be deleted by it. To run it again, run `git checkout .` prior
 to next java run.*
-
-## Screenshots
-
-### CLI
-![Snyk CLI Reachable Vulnerabilities](CLI_reachable.png)
-
-### Snyk UI
-![Snyk UI Reachable Vulnerabilities](UI_reachable.png)
