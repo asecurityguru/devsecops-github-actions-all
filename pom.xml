@@ -3,9 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.example</groupId>
-    <artifactId>java-reachable-goof</artifactId>
+    <artifactId>java-vulnerable-code-asecurityguru</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -22,6 +21,52 @@
             <artifactId>nd4j-common</artifactId>
             <version>1.0.0-beta2</version>
         </dependency>
-    </dependencies>
 
+<!--#Change 1 - Changes for Unit Test Coverage Percentage Update on SonarCloud Dashboard
+#By ASecurityGuru
+#5/11/2022 11:14 AM IST
+#Default Location of CodeCoverage File is target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+-->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+
+</dependencies>
+    <build>
+        <plugins>
+
+<!--#Change 2 - Changes for Unit Test Coverage Percentage Update on SonarCloud Dashboard
+#By ASecurityGuru
+#5/11/2022 11:14 AM IST
+#Default Location of CodeCoverage File is target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+-->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+               <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <executions>
+                  <execution>
+                    <id>prepare-agent</id>
+                    <goals>
+                      <goal>prepare-agent</goal>
+                    </goals>
+                  </execution>
+                  <execution>
+                    <id>report</id>
+                    <goals>
+                      <goal>report</goal>
+                    </goals>
+                    <configuration>
+                      <formats>
+                        <format>XML</format>
+                      </formats>
+                    </configuration>
+                  </execution>
+                </executions>
+              </plugin>
+       </plugins>
+       </build>
 </project>
