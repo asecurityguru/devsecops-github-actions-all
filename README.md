@@ -1,4 +1,4 @@
-# Java Reachability Playground Modified by ASecurityGuru
+# Java Reachability Playground Modified by ASecurityGuru for End to End Java DevSecOps Project Case Study
 
 # Updated on 11th June, 2022 - Added SonarCloud Code Coverage Changes
 
