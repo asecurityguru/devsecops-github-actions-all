@@ -44,4 +44,4 @@ jobs:
           docker_name: 'owasp/zap2docker-stable'
           target: 'https://cf44-181-96-192-41.sa.ngrok.io'
           rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'
+          cmd_options: '-a' 
