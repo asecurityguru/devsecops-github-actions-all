@@ -46,4 +46,4 @@ jobs:
           docker_name: 'owasp/zap2docker-stable'
           target: 'https://43ee-181-96-192-41.sa.ngrok.io/v3/security-hooks'
           rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a' 
+          cmd_options: '-a'  
