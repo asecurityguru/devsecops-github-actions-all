@@ -1,5 +1,6 @@
 import org.apache.commons.collections.ListUtils;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class Butler {
 
@@ -12,6 +13,6 @@ public class Butler {
         ArrayList<String> list2 = new ArrayList<String>();
         list2.add("World");
 
-        System.out.println(ListUtils.union(list1, list2));
+        Logger.tprintln(ListUtils.union(list1, list2));
     }
 }
