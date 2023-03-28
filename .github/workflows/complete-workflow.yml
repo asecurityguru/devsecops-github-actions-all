@@ -1,7 +1,5 @@
 name: Build code, run unit test, run SAST, SCA, DAST security scans
 on: push
-branches:
-  - sast-scanning # Change the branch name according to your requirement
 
 jobs:
   build:
