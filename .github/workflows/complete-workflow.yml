@@ -4,7 +4,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Run unit tests and SAST scan on the source code 
+    name: Run unit tests and SAST scan on the source code #Name of Job
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -14,7 +14,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven cloud
-      run:  mvn -B verify sonar:sonar -Dsonar.projectKey=javaprojectreachability -Dsonar.organization=javaprojectreachability -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+      run:  mvn -B verify sonar:sonar -Dsonar.projectKey= java-case-study-1960-project-key -Dsonar.organization=java-case-study-1960-project-key -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -23,10 +23,10 @@ jobs:
     needs: build
     name: Run the SCA scan on the source code
     steps:
-      - uses: actions/checkout@master
-      - name: RunSnyk to check for vulnerabilities
-        uses: snyk/actions/maven@master
-        continue-on-error: true
+      - uses: actions/checkout@master                 # checkout Action
+      - name: RunSnyk to check for vulnerabilities    # Name of Snyk Action   
+        uses: snyk/actions/maven@master               # Snyk Action
+        continue-on-error: true                       # Build not fail in case of error 
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   zap_scan:
@@ -37,7 +37,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: master                                 # Refering to Master Branch 
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.6.1
         with:
