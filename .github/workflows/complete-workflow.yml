@@ -20,7 +20,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   security:
     runs-on: ubuntu-latest
-    #needs: build
+    needs: build  #For Sequnetial flow (Before run Security, Run the Build job)
     name: Run the SCA scan on the source code
     steps:
       - uses: actions/checkout@master                 # checkout Action
@@ -31,7 +31,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   zap_scan:
     runs-on: ubuntu-latest
-    #needs: security
+    needs: security  #For Sequnetial flow (Before run Zap_scan, Run the Security job)
     name: Run DAST scan on the web application
     steps:
       - name: Checkout
