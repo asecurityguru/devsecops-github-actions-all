@@ -11,7 +11,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '21'
-        distribution: 'julu'
+        distribution: 'zulu'
         cache: maven
     - name: Build with Maven cloud
       run:  mvn -B verify sonar:sonar -Dsonar.projectKey=javaprojectreachability -Dsonar.organization=javaprojectreachability -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN
